@@ -23,17 +23,15 @@
 									<header class="major">
 										<h1>Deep Reinforcement Learning.</h1>
 									</header>
-									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
+									<span class="image main"><img src="images/DRL.png" alt="" /></span>
 									<h2>Project overview and inspiration.</h2>
-									<p></p>
+									<p>Adding onto the previous project on reinforcement learning, the main goal of this project was to utilize aspects of both reinforcement learning and deep learning to solve a game environment created by a good friend of mine. The name of the game is called Lets Break Suma! which is an adaptation of Atari's Blockbreaker Game. The link to the game can be found <a href="https://github.com/Amreiz/LetsBreakSuma">here.</a></p>
 									<h2>How it operates.</h2>
-									<p></p>
+									<p>The agent operates using the same principle of reinforcement learning as used in my previous project with a twist. That being, adding a neural network which helps the agent in making better desicions(actions) depending on the environment state(images captured on screen). I first started by implementing a fully connected layer to the reinforcement learning algorithm which obtains frames from the game. The output of the fully connected layer is 10 different mouse positions which moves the paddle to different sections of the screen so that the agent can hit the ball. This was done using Pythons pyautogui library in regard to moving mouse positions. Rewards are assigned to the agent depending on the number of blocks hit per episode. An episode is a period of time in which the game runs without the agent missing to hit the ball on the paddle(if the agent fails to hit the ball with the paddle, the game ends and starts a fresh one), or the agent cleared the level by hitting all the blocks.</p>
 									<h2>How to install.</h2>
-									<p></p>
+									<p>Further information on how to install and run the game can be found <a href="https://github.com/Kikumu/Combining-model-free-reinforcement-learning-with-Deep-learning">here</a></p>
 									<h2>Future work.</h2>
-									<p></p>
-									
-									
+									<p>Future project involves using a much more complex game environment (and algorithm) which utilizes aspects of deep reinforcement learning. I plan to train an agent to play the Super Mario Videogame.</p>
 								</div>
 							</section>
 					</div>
