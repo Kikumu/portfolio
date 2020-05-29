@@ -28,7 +28,13 @@
 									<p>This project was based on my final year dissertation project. The main goal of the project was to create a path finding robot its purpose being to navigate all sections of a maze. This was done through using elements of machine vision so that the robot can understand its environment and using the algorithm I designed, navigate its environment. The equipment used was a raspberry Pi model 3 b which carried out all the calculations and directed the robot while the paralax activity board acted as the body of the robot. In which the parallax activity board receives signals from the raspberry pi which drove the motors connected to the parallax activity board. </p>
 									<span><img src="images/robot.png" alt="" /></span>
 									<h2>How it works.</h2>
+									<h3>Lane Detection.</h3>
 									<p>The robot works by obtaining images from its environment and transforming the image received into a binary image. Depending on the colour of the tape used, I created an interface in which the user can use sliders to make the robot detect the colour of the lane which the user has put.</p></br><span><video width="600" controls> <source src="videos/HSV_SETUP.mp4" type="video/mp4"></video></span><p> Using various static points of interest I had put on the image, the robot uses these points of interest to correct itself if it strays off the lane. The type of algorithm used to navigate the maze is the right hand rule algorithm. Using this rule, the robot is guaranteeed to visit all sections of the maze and finding the exit of the maze as long as there are no closed loops within the maze and the exit is not at the centre of the maze.</p>
+									<h3>Shape Detection.</h3>
+									<p>The main purpose of implementing a shape detection algorithm was to detect the end of the maze which halts all operations of the robot. Using OpenCV's trackbar and Image contouring, the shape is detected depending on the number of edges. The shape can be of any colour which is set using an interface as shown below.<br>
+										<span><video width="600" controls> <source src="videos/SDT.mp4" type="video/mp4"></video></span>
+
+									</p>
 									<h2>How to install.</h2>
 									<p>How to install and run the software can be found <a href="https://github.com/Kikumu/Maze-Solver-Robot-Machine-Vision-">here</a></p>
 						
