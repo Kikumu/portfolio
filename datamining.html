@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Data Mining.</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="projects_assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="projects_assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html#portfolio" class="logo"><strong>Back</strong></a>
+					</header>
+				<!-- Main -->
+					<div id="main" class="alt">
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Datamining: Determining patient risk using Datamining and AI.</h1>
+									</header>
+					
+									<h2>Project overview and inspiration.</h2>
+									<p>This project is part of the coursework module Datamining and decision systems. The goal of this project is to use elements of data mining from cleaning to model evaluation using CRISP-DM(CRoss Industry Standard Process for Datamining) methodology to determine mortality rate of patients.
+										The life-cycle of CRISP-DM methodology consists of:
+										<ul>
+											<li><b>Business understanding:</b> Initial phase of the project whereby the project success criteria and goal is established.
+												In this case,the project is considered a success if the resultant model gives an optimal classification of patient mortality.
+											</li>
+											<li><b>Data Understanding:</b> Data quality issues are identified within the provided data to mine.</li>
+											<li><b>Data Preparation:</b> Necessary data cleaning techniques and data transformation are applied so that the machine learning model can easily digest the data.</li>
+											<li><b>Modelling:</b> Different machine learning techniques are applied to the data provided and are gauged as to which performed best based on model performance.</li>
+											<li><b>Evaluation:</b> After model is chosen, a coverage is given as to why the model best fits the project.</li>
+										  </ul> </p>
+									</p>
+									<h2>Data Preparation and Cleaning.</h2>
+									<p>Data provided had inconsistencies as is the characteristics of real-world data. The data provided was in a tabulated format and the inconsistencies encountered were 
+										that some rows provided either contained empty data or data that was in the provided cell was not in an agreeable format. An example of unclean data provided for the project can be demonstrated as shown
+										in the image below:
+									</br>
+									</br>
+										<span class="image"><img src="images/unclean_data_example.png" alt="" /></span>
+								    </br>
+							        </br>
+									Two cleaning methods were used to solve this issue. One of the methods used was through using queries. Whereby, while utilizing <b>Pandas</b> library, a user-generated <b>query</b> is created to sift through
+									the data to obtain information similar to the unavailable data. An example code snippet is as shown below:
+									</br>
+									</br>
+									<span class="image"><img src="images/query.png" alt="" /></span>
+									</br>
+									</br>
+									Using <b>Seaborn</b>, data obtained is then converted into a graph. The value with the highest frequency in the graph is more likely to be the best choice to replace the NaN value. An example 
+									graph generated from the query can be shown below. The highest value frequency is seen to be no therefore the most suitable value to fill the NaN value is no.
+									</br>
+									</br>
+									<span class="image"><img src="images/history.png" alt="" /></span>
+									</br>
+									</br>
+									The second method involves using <b>KNN(K Nearest Neighbour)</b> to determine the best value to fill in NaN values. Necessary data pre-processing is first done which converts the data into values 
+									which can be taken in by the KNN model as the KNN model cannot directly take in strings. This process is done through mapping. Mapping in this case is where strings are converted
+									integers. This can be demonstrated in the code snippet below:
+									</br>
+									</br>
+									
+									<span class="image"><img src="images/mapping.png" alt="" /></span>
+									
+									</br>
+									</br>
+									The model is then trained by assigning desired features and labels(feature in the data that the model is meant to predict) and fed the transformed data to give a numerical prediction which represents the mapped data as shown below:
+									</br>
+									<b>Training and labelling example snippet</b>
+									</br>
+									<span class="image"><img src="images/KNNModelTrain.png" alt="" /></span>
+									</br>
+									</br>
+									
+									</br>
+									<b>KNN classifying/prediction example snippet</b>
+									</br>
+									<span class="image"><img src="images/KNNLabellingPrediction.png" alt="" /></span>
+									
+									</p>
+									<h2>Model Selection and evaluation.</h2>
+									<p>
+										3 models were used which were:
+										<ul>
+											<li><b>Logistic Regression.</b>
+											</li>
+											<li><b>Multi-layer perceptron.</b></li>
+											<li><b>Decision Trees.</b></li>
+											
+										  </ul> </p>
+
+									Each model was trained based on data received from both cleaning methods. An evaluation of the models was then carried out depending on the cleaning method to determine which model was best and which
+									cleaning method improved the model performance. This was done through testing model sensitivity by conducting <b>true positive(TP), true negative(TN), false negative(FN) and false positive(FP) and model accuracy
+									</b> as illustrated in the image snippet below:
+									</br>
+									</br>
+									<span class="image"><img src="images/metrics.png" alt="" /></span>
+									</br>
+									</br>
+									Based on the metrics, KNN algorithm was a better fit for cleaning the data and Decision Trees was the model which performed best.
+									</p>
+									<h2>Libraries Used.</h2>
+									The libraries used for the project are:
+									<ul>
+										<li><b>Seaborn.</b>
+										</li>
+										<li><b>Pandas.</b></li>
+										<li><b>SKlearn.</b></li>
+										<li><b>Matplotlib.</b></li>
+									  </ul> </p>
+									<h2>Resources.</h2>
+									<p>Original source code and data trained on can be found <a href ="https://github.com/Kikumu/Determining-a-patients-risk-via-AI-and-data-mining">here</a></p>
+								</div>
+							</section>
+					</div>
+				<!-- Footer -->
+			</div>
+
+		<!-- Scripts -->
+			<script src="projects_assets/js/jquery.min.js"></script>
+			<script src="projects_assets/js/jquery.scrolly.min.js"></script>
+			<script src="projects_assets/js/jquery.scrollex.min.js"></script>
+			<script src="projects_assets/js/browser.min.js"></script>
+			<script src="projects_assets/js/breakpoints.min.js"></script>
+			<script src="projects_assets/js/util.js"></script>
+			<script src="projects_assets/js/main.js"></script>
+
+	</body>
+</html>
