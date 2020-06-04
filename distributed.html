@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Sports Management System</title>
+		<title>Distributed Systems.</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="projects_assets/css/main.css" />
@@ -25,10 +25,36 @@
 									</header>
 					
 									<h2>Project overview and inspiration.</h2>
-									<p>This project is part of the distributed systems coursework. Using elements of C#, ASP.NET, Entity Framework, Web API and Cryptography, a distributed systems program was created.The program consisted of server-client communication and task distribution while ensuring information sent between the server and client is safely encrypted during transmission </p>
+									<p>This project is part of the distributed systems coursework. Using elements of <b>C#, ASP.NET, Entity Framework, Web API and Cryptography</b>, a distributed systems program was created.The goal of the project is to create a server-client communication based on the five highlighted elements discussed previously.</p>
 									<h2>Features.</h2>
 									<h3>User Creation.</h3>
-									<p>There were 2 types of users which were usable with the server and client. These were the Admin and User user types. Requests were sent to the server using GET and POST requests to check if any user was either in the database or the username was already taken. The first user to log on to the server will be automatically assigned an Admin user-type. Other user log ons after this will be automatically assigned a "User" user-type. This can be demonstrated in the video below.</p>
+									<p>There were 2 types of users which were usable with the server and client. These were the Admin and User user types. Requests were sent to the server using <b>GET and POST requests</b> to check if any user was either in the database or the username was already taken. The first user to log on to the server will be automatically assigned an Admin user-type. Other user log ons after this will be automatically assigned a "User" user-type.</p>
+									<h3>Database Structure.</h3>
+									<p>
+										The structure of the database was developed using <b>Entity Framework</b> while utilising the <b>code-first</b> aspect to design the database. Each User including the Admin has
+										a collection of entries stored separately in another table on the database. All user log entries are saved on the same table and each log entry has a unique ID and is attatched to
+										the user which carried out different tasks within the server.
+									</p>
+									<h3>Encryption.</h3>
+									<p>
+										On user signup to the server, the user has the option to encrypt and send their data using either <b>SHA1 or SHA256 encryption.</b> However the user must first obtain a <b>Public Key</b> 
+										which is requested by the client and is obtained from the server. Without the public Key, encryption will not be carried out. The user also has the option to <b>verify and sign messages</b> sent from 
+										the client. This is done so that the client can confirm that the message sent was indeed signed and verified by the server or by an unknown entity. If the case was the latter, the client will
+										 indicate to the user that the message was not successfully signed.
+									</p>
+									<h3>User Authorization.</h3>
+									<p>
+										Some of the servers resources are innaccessible to normal users. One of the features implemented was that, only a user with Admin priviledges can change another user's role or delete a user.
+										This was implemented through a <b>Middleware</b>. In which, the middleware checks the validity of a request and confirms if the user sending the request has the authority to make the server carry out a specific
+										request.
+									</p>
+									<h3>Server Design.</h3>
+									<p>
+										The type of server designed for the project was a <b>stateless server</b>. A stateless server is a server which does not save client information between requests and the client is 
+											continuously authorized by the server. The client also has to keep sending over the necessary credentials for the server to carry out a certain task given by the client.
+										
+									</p>
+									
 									
 								</div>
 							</section>
