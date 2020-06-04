@@ -21,29 +21,100 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1>SQL-LITE based Sports Management System.</h1>
+										<h1>Computational Science; Simulating and tracking a robot in one dimensional space.</h1>
 									</header>
 					
 									<h2>Project overview and inspiration.</h2>
-									<p>The inspiration of this project was drawn from a previous coursework project on creating a windows form software in C# which utilizes elements of SQL to store and manage data. The main goal for this project was to implement a Sports management system software which manages staff, students and to monitor usage of items within the sports facility.</p>
-									<h2>Features.</h2>
-									<h3>User login, sign-up and authentication</h3>
-									<p>Users are authenticated depending on the assigned user type, password and user-name on login. If any of these do not match, the program will not allow a user to run the program and acces its features.
-									A user can easily sign up to a system(if they havent signed up yet) and pick any user type they would like to be. There is a selection of 5 user types to select from which are  Student, Personal Trainer, Volunteer, External user or Facility Manager. They can then set up a unique user name and any desired password.</p>
-									<iframe width="560" height="315" src="https://www.youtube.com/embed/UGhNEZrx_bE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									<h3>User type features.</h3>
-									<h4>General customer use.</h4>
-									<p>Each user type has access to different features in the application. Students, volunteers and External user have access to the same number of basic features because they are mainly customers to the facility. They can book appointments, cancel appointments, view appointments and manage their account. </p>
-									<iframe width="560" height="315" src="https://www.youtube.com/embed/7pKgu9jCdNs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									<h4>Facility manager functionality.</h4>
-									<p>The facility manager can manage all the employed staff and volunteers in the system.
-									The facility manager can also manage hiring of items in the sports facility and deny/approve hiring of items in the facility. Items are automatically set to pending if the facility manager has not approved or denied hiring of a specific item in the facility.</p>
-									<iframe width="560" height="315" src="https://www.youtube.com/embed/tjrDiOWWG_o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									<p>The manager can also manage jobs of all the staff in the facility.</p>
-									<h2>How to install.</h2>
-									<p>How to install the software can be found <a href="https://github.com/Kikumu/SQL-Sports-Management-System">here</a></p>
-									<h2>Future work.</h2>
-									<p>Implement a password authentication feature or a from of 2 factor authentication for the software.</p>
+									<p>This project is part of the coursework module Computer Science conducted at the University of Hull. The goal of the project can be broken down into three parts which are:
+										<ul>
+											<li><b>Simulate</b> the robot movement in one dimensional space.
+											</li>
+											<li><b>Add white noise</b> to the simulation to mimic real-world noise.</li>
+											<li><b>Track</b> movement of the robot using a perceptron.</li>	
+										  </ul> 
+										
+									</p>
+									<h2>Robot Simulation.</h2>
+									<p>
+										The robot model movement is simulated through a simplified equation which is given as <b>x = -2x + 2U</b>. Whereby x is the generalised position of the robot and changes with time 
+										while U represents the distance of the robot from the origin. The U value <b>changes with time</b> and can be simplified using the following threshholds:
+									</br>
+									</br>
+									<span class="image"><img src="images/U_thresh.png" alt="" /></span>
+									</br>
+									</br>
+									</br>
+									<b>Step sizes</b> were then considered. Step sizes refers to how much the robot will be able to move per time step. Different step sizes resulted in different simulations. Higher Step 
+									sizes made the simulation unstable while lower step sizes stabilized the simulation. However, very low step sizes resulted in heavy computational inefficiency due to alot of calculations
+									done per time step. A sweet spot for step size was then achieved through testing, observing and graphing different step sizes as shown below. The different step sizes tested were:
+									<ul>
+										<li>0.001.
+										</li>
+										<li>0.01.</li>
+										<li>0.25.</li>
+										<li>0.5.</li>
+										<li>0.75.</li>
+										<li>1.</li>	
+									  </ul> 
+									
+									
+									<span class="image"><img src="images/step_size.png" alt="" /></span>
+									</br>
+									
+									</br>
+									An appropriate step size was seen to be a step size of 0.01 which is demonstrated in the image below:
+									</br>
+									</br>
+									<span class="image"><img src="images/fav.png" alt="" /></span>
+									</br>
+									</br>
+									</br>
+									</p>
+									<h2>Adding white noise.</h2>
+									<p>
+										White noise was then added to the simulation using the <b>Box muller method</b> which is based off a mean and standard deviation to accurately represent data.
+										A higher standard deviation will generate more noise in the simulation while a lower standard deviation will generate less noise. This can be demonstrated in the image below:
+									</br>
+									</br>
+									<span class="image"><img src="images/comb_stddev.png" alt="" /></span>
+									</br>
+									</br>
+									A lower standard deviation is preferred in order to train a perceptron to track the robot.
+									</br>	
+									</br>
+									<h2>Tracking the robot.</h2>
+									A <b>perceptron</b> is then used to track the movement of the robot. The perceptron attempts to predict the next position of the robot given a timestep. During training and evaluation of the perceptron,
+									different <b>learning rates</b> were tested to determine the optimal learning rate to train the perceptron with. Learning rates determine the rate which the weights in the model are updated.
+									A higher learning rate resulted in perceptron instability while lower learning rates were computationally inneficient because the perceptron took an enormous amount of time to learn to track the robot.
+									A sweet spot was then achieved through testing various learning rates as shown below.
+									</br>
+									<b>Perceptron tracking(Yellow) Robot simulation (Blue).</b>
+									</br>
+									<span class="image"><img src="images/lowlrgrph.png" alt="" /></span>
+									</br>
+
+									</br>
+									After training, the perceptron was then tested against "unseen" data. The unseen data was simply the robot simulation but with more noise implemented into the simulation
+									using box muller method. The results were as shown below:
+									</br>
+									<b>Perceptron tracking(Yellow) Robot simulation (Blue).</b>
+									</br>
+									<span class="image"><img src="images/test.png" alt="" /></span>
+									</br>
+
+									</br>
+									<h2>Resources and Libraries used.</h2>
+									The project is coded using Python. The libraries used were:
+									<ul>
+										<li><b>Numpy.</b>
+										</li>
+										<li><b>Seaborn.</b></li>
+										<li><b>Pandas.</b></li>
+										<li><b>Scipy.</b></li>
+										<li><b>Sklearn.</b></li>
+										<li><b>Matplotlib.</b></li>	
+									  </ul> 
+									</p>
 								</div>
 							</section>
 					</div>
