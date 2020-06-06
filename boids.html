@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Arduino</title>
+		<title>Boids.</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="projects_assets/css/main.css" />
@@ -21,9 +21,47 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1>Remote Controlled Arduino Stopwatch.</h1>
+										<h1>Flocking Algorithm(Boids).</h1>
 									</header>
-									<h2>Page currently under development. However, you can view the source code and documentation by clicking on this <a href="https://github.com/Kikumu/Arduino_projects">link.</a></h2>
+									<h2>Project Inspiration and Overview.</h2>
+									<p>
+										I have been wanting to look at the flocking algorithm for a while. Now that I have extra time I decided to look deeper into the flocking algorithm.
+										This project involves implementing the flocking algorithm using Unity. It is also part of a larger project I am working on in game creation using the Unity 
+										engine.
+									</p>
+									<h2>General Algorithm.</h2>
+									<p>
+										The general algorithm involves utilizing 3 aspects to create the emergent behaviour which are:	
+										<ul>
+											<li><b>Cohesion:</b> This involves how close together an agent would be to its surrounding neighbours. The higher the cohesion, the more tightly packed the flock will be.
+											</li>
+											<li><b>Alignment:</b> This guides the agent as to where the direction of the overall flock is headed towards.</li>
+											<li><b>Separation:</b> This guides the agent as to what distance should it be from its surrounding neighbours. It is the direct opposite of cohesion.</li>
+											
+										  </ul>
+									</p>
+									<h2>Demonstration.</h2>
+									<p>
+										Demonstration of the boids algorithm in action can be shown below:
+									</br>
+									</br>
+									<span><video width="600" controls> <source src="videos/Flock_demo.mp4" type="video/mp4"></video></span>
+									</br>
+									</br>
+									I implemented sliders which can adjust the number of agents in the flock. Cohesion, alignment and separation slider interfaces were also implemented.	
+									</p>
+									<h2>Resources.</h2>
+									<p>
+										Source code to this project can be found <a href="https://github.com/Kikumu/Unity-Flocking-Algorithm">here.</a>
+									</br>
+									Other resources in relation to the algorithm can be found in the following links:
+									<ul>
+										<li><a href="https://en.wikipedia.org/wiki/Flocking_(behavior)">https://en.wikipedia.org/wiki/Flocking_(behavior)</a>
+										</li>
+										<li><a href="https://www.red3d.com/cwr/boids/">https://www.red3d.com/cwr/boids/</a></li>
+										
+									  </ul>
+									</p>
 								</div>
 							</section>
 					</div>
