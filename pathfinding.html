@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Path Finding C++</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="projects_assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="projects_assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html#portfolio" class="logo"><strong>Back</strong></a>
+					</header>
+				<!-- Main -->
+					<div id="main" class="alt">
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>PathFinding using Dijkstras algorithm.</h1>
+									</header>
+									<h2>Project Overview and Inspiration.</h2>
+									<p>
+										For my module for Advanced Programming at the University, I was tasked with creating a Path Finding algorithm with the C++ code base. Algorithm of choice
+										was up to the student however, the program should be as fast and as efficient as possible. Unit tests were run prior to launching the program using Parasoft.
+									</p>
+
+									<h3>Software Design.</h3>
+									<p>
+										Initial starting code was provided and was mandatory to be utilized at the beginning of the program. Dynamic data structures were then implemented to store dynamic data such as nodes(places)
+										and arcs(pathways). Commands were executed through a text file containing places. The software will then determine if the places are available, which mode of transport is possible
+										and the distance between the 2(or more) places. There were several rules which were applied when moving through arcs which are:
+										<ul>
+											<li>A rail or ship journey may only use arcs(paths) of the corresponding mode.
+											</li>
+											<li>A bus journey may use bus and ship arcs, while a car journey may use car, bus and ship arcs.</li>
+											<li>a bike journey may use bike arcs and the 2 previously mentioned arcs.</li>
+											<li>A foot journey can use any arc.</li>
+											
+										  </ul> </p>
+									</p>
+
+									<h3>Tools Used.</h3>
+									<p>
+										<ul>
+											<li>C++ code base.
+											</li>
+											<li>Parasoft. (Wonderful profiling software helps improve code efficiency).</li>
+		
+											
+										  </ul> 
+									</p>
+								</div>
+							</section>
+					</div>
+				<!-- Footer -->
+			</div>
+
+		<!-- Scripts -->
+			<script src="projects_assets/js/jquery.min.js"></script>
+			<script src="projects_assets/js/jquery.scrolly.min.js"></script>
+			<script src="projects_assets/js/jquery.scrollex.min.js"></script>
+			<script src="projects_assets/js/browser.min.js"></script>
+			<script src="projects_assets/js/breakpoints.min.js"></script>
+			<script src="projects_assets/js/util.js"></script>
+			<script src="projects_assets/js/main.js"></script>
+
+	</body>
+</html>
