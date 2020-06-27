@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Embedded Systems.</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="projects_assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="projects_assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html#portfolio" class="logo"><strong>Back</strong></a>
+					</header>
+				<!-- Main -->
+					<div id="main" class="alt">
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Embedded Systems - PICF877A Development Board.</h1>
+									</header>
+									<h2>Project Overview and Inspiration.</h2>
+									<p>
+										For my module for Embedded Systems at the University, we were tasked with creating a GreenHouse Control System using a PIC QL200 Development Board.
+									</p>
+									<h2>System Overview/Features.</h2>
+									<p>
+										The System contains a time of day clock and have features such as:
+										<ul>
+											<li>Setting up date/time.
+											</li>
+											<li>Display of current temperature.</li>
+											<li>Display current date/time/month.</li>
+											<li>Entry of trigger temperaures.</li>
+											<li>Two output controls; one for a heating circuit and one for air circulation.</li>
+										  </ul> 
+
+										  When the temperature drops below a set threshold, the heating output will be turned on. If the temperature continues to drop an alarm signal is produced. The user is able to
+										  clear the alarm signal by pressing the assigned clear button on the Development board.
+										  When the temperature rises below a set threshold, a cooling output will be turned on. If the temperatures continues to rise an alarm signal is produced. The user is able to reset
+										  the alarm by pressing the designated button on the development board.
+									</p>
+									<h3>Date/Time Setup and Display.</h3>
+									<p>
+										Setting up of the date/time display was managed using the lcd12864 LCD panel and programmed while playing close attention to the lcd12864 datasheet. Setting up
+										commands such as cursor placement, clear screen, circuitry setup and read/write timings using timing diagrams were managed while strictly following the datasheet.
+									</p>
+									<h3>Current Temperature Management.</h3>
+									<p>
+										Temperature sensing hardware was the DS18B20 Programmable Resolution 1-Wire Digital Thermometer by Dallas Semiconductor. Temperatur/Data Relationships were managed using the associated
+										Datasheet showing Temperature(in Celcius) conversion to Binary output(Digital Output) and Hexadecimal equivalent. Initialization and ROM search was managed by strictly following the DS18B20 Thermometer
+										 Datasheet.
+									</p>
+									<h3>Timekeeping Chip.</h3>
+									<p>
+										Date/Time management was managed by the DS1302 Trickle Charge Timekeeping chip which enabled:
+										<ul>
+											<li>Real-time clock counts seconds, minutes, hours.
+											</li>
+											<li>Date of month, day of month/week and month.</li>
+											<li>Leap year compenstation up to the year 2100.</li>
+										  </ul> 
+										Data input and output operations were programmed following the PIC's SCLK cycles and following the hardware Datasheet.
+									</p>
+									<h2>Resources/Tools Used.</h2>
+									<ul>
+										<li>PICF877A Development Board.
+										</li>
+										<li>DS18B20 Programmable Resolution 1-Wire Digital Thermometer by Dallas Semiconductor.</li>
+										<li>lcd12864 LCD panel.</li>
+										<li>DS18B20 datasheet.</li>
+										<li>lcd12864 LCD datasheet.</li>
+										<li>MP LABS IDE.</li>
+										<li>C language</li>
+										<li>Assembly Language.</li>
+									  </ul> 
+									<h2>Overall System Logic Flow.</h2>
+									<h3>Menu.</h3>
+									<span><img src="images/menu_logic.png" alt="" /></span>
+									<h3>Set Time.</h3>
+									<span><img src="images/settime_logic.png" alt="" /></span>
+									<h3>Set Date.</h3>
+									<span><img src="images/setdate_logic.png" alt="" /></span>
+									<h3>Set Threshold.</h3>
+									<span><img src="images/setthreshold_logic.png" alt="" /></span>
+								</div>
+							</section>
+					</div>
+				<!-- Footer -->
+			</div>
+
+		<!-- Scripts -->
+			<script src="projects_assets/js/jquery.min.js"></script>
+			<script src="projects_assets/js/jquery.scrolly.min.js"></script>
+			<script src="projects_assets/js/jquery.scrollex.min.js"></script>
+			<script src="projects_assets/js/browser.min.js"></script>
+			<script src="projects_assets/js/breakpoints.min.js"></script>
+			<script src="projects_assets/js/util.js"></script>
+			<script src="projects_assets/js/main.js"></script>
+
+	</body>
+</html>
